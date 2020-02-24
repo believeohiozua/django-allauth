@@ -170,6 +170,7 @@ class LoginView(RedirectAuthenticatedUserMixin,
 
         ret.update({"signup_url": signup_url,
                     "site": site,
+                    "signup_form":SignupForm,
                     "redirect_field_name": self.redirect_field_name,
                     "redirect_field_value": redirect_field_value})
         return ret
@@ -254,6 +255,7 @@ class SignupView(RedirectAuthenticatedUserMixin, CloseableSignupMixin,
         redirect_field_value = get_request_param(self.request,
                                                  redirect_field_name)
         ret.update({"login_url": login_url,
+                     "login_form":LoginForm,
                     "redirect_field_name": redirect_field_name,
                     "redirect_field_value": redirect_field_value})
         return ret
