@@ -170,7 +170,7 @@ class LoginView(RedirectAuthenticatedUserMixin,
 
         ret.update({"signup_url": signup_url,
                     "site": site,
-                    "signup_form":SignupForm,
+                    "signup_form": "signup_form":get_form_class(app_settings.FORMS, 'signup',SignupForm),
                     "redirect_field_name": self.redirect_field_name,
                     "redirect_field_value": redirect_field_value})
         return ret
